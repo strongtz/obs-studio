@@ -237,7 +237,7 @@ mfxStatus QSV_Encoder_Internal::InitParams(qsv_param_t *pParams,
 		m_mfxEncParams.mfx.GopRefDist = pParams->nbFrames + 1;
 
 	if (codec == QSV_CODEC_HEVC)
-		m_mfxEncParams.mfx.LowPower = MFX_CODINGOPTION_OFF;
+		m_mfxEncParams.mfx.LowPower = MFX_CODINGOPTION_ON;
 
 	enum qsv_cpu_platform qsv_platform = qsv_get_cpu_platform();
 	if ((m_isDGPU || qsv_platform >= QSV_CPU_PLATFORM_ICL ||
